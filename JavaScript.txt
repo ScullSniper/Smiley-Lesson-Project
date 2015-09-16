@@ -1,0 +1,64 @@
+var faceShape = $("#face");
+var eyeRShape = $("#eyeR");
+var eyeLShape = $("#eyeL");
+var eyemidLShape = $("#eyemidl");
+var eyemidRShape = $("#eyemidr");
+
+var eyeLPos;
+var eyeRPos;
+var isFaceYellow;
+isFaceYellow = true;
+eyeRPos = true;
+eyeLPos = true;
+
+faceShape.click(function () {
+    if (isFaceYellow == true) {
+        //face is Yellow - make it Orange and small
+        faceShape.attr("fill", "#ffcc00");
+        faceShape.attr("r", "200")
+
+        isFaceYellow = false;
+
+    } else {
+        //face isn't Yellow - make it Yellow and big
+        faceShape.attr("fill", "Yellow");
+        faceShape.attr("r", "250")
+
+        isFaceYellow = true;
+
+    }
+});
+
+eyeRShape.click(function () {
+    if (eyeRPos == true) {
+        // eye is looking right make it look left
+        eyemidLShape.attr("cx", "180");
+        eyemidRShape.attr("cx", "380");
+
+        eyeRPos = false;
+        eyeLPos = false;
+    } else {
+        eyemidLShape.attr("cx", "220");
+        eyemidRShape.attr("cx", "420");
+
+        eyeRPos = true;
+        eyeLPos = true;
+    }
+});
+
+eyeLShape.click(function () {
+    if (eyeRPos == true) {
+        // eye is looking right make it look left
+        eyemidLShape.attr("cx", "180");
+        eyemidRShape.attr("cx", "380");
+
+        eyeRPos = false;
+        eyeLPos = false;
+    } else {
+        eyemidLShape.attr("cx", "220");
+        eyemidRShape.attr("cx", "420");
+
+        eyeRPos = true;
+        eyeLPos = true;
+    }
+});
